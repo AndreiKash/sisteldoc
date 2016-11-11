@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  surname: MyString
+  name: MyString
+  patronymic: MyString
+  login: MyString
+  leader: false
+  rank: 1
+  subdivision: 1
+  write: false
+  read: false
+
+two:
+  surname: MyString
+  name: MyString
+  patronymic: MyString
+  login: MyString
+  leader: false
+  rank: 1
+  subdivision: 1
+  write: false
+  read: false
