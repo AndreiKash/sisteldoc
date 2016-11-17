@@ -1,10 +1,9 @@
 class StaticPageController < ApplicationController
-  def welcome
-  end
-
-  def home
+  def welcome_home
   end
 
   def internal_directory
+    @users = User.all
+    @subdivisions = Subdivision.all
   end
 end

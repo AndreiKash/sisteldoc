@@ -1,14 +1,16 @@
-<header class="navbar navbar-fixed-top navbar-default" >
+<header class="navbar navbar-fixed-top navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to "Система электронного документооборота", '#', id: "logo" %>
+      <%= link_to "Система электронного документооборота",  root_path, id:'logo'%>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-     	<nav>
-       	<ul class="nav  navbar-nav navbar-right">
-       		<li><%= link_to "Главное меню",    home_path %></li>
-       	</ul>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+          <% if signed_in? %>
+            <li><%= link_to "Главное меню", root_path %></li>
+              <li><%= link_to "Выйти из системы", signout_path, method: "delete" %></li>
+          <% end %>
+        </ul>
       </nav>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container-fluid -->
+    </div>
+  </div>
 </header>

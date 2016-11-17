@@ -1,0 +1,27 @@
+<% if signed_in? %>
+	<% provide(:title, 'Главная') %>
+	<h1>Главное меню</h1>
+	<table>
+		<tr>
+			<td>
+			<%= link_to internal_directory_path do %>
+   				<%= image_tag("internal_directory.png", :alt => "Внутренний справочник", 
+   				:class => "img-rounded", :width => "100", :height => "100") %>
+   				<h2>Внутренний справочник</h2>
+			<% end %>
+			</td>
+			<td>
+
+			</td>
+		</tr>
+	</table>
+<%else%>
+	<% provide(:title, 'Добро пожаловать') %>
+	<div class="center hero-unit">
+	  <h1>Добро пожаловать в систему электронного документооборота!</h1>
+
+	  <h2>Чтобы начать работу, нажмите кнопку "Войти в систему"</h2>
+
+	  <%= link_to "Войти в систему", signin_path, class: "btn btn-success btn-lg" %>
+	</div>
+<%end%>

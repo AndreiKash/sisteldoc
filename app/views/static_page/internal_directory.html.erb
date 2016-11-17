@@ -1,5 +1,18 @@
 <% provide(:title, 'Внутренний справочник') %>
-<h1>Внутренний справочник</h1>
-<p>
-  Здесь будет находится таблица с иерархией сотрудников и подразделений
-</p>
+
+<div class="container">
+	<div class="col-md-12"><h1>Внутренний справочник</h1></div>
+  	<div class="col-md-12">
+  		<%@subdivisions.each do |subdivision|%>
+	    	<ul class="nav nav-list-main">
+	        	<li><label class="nav-toggle nav-header"><span><%=subdivision.fullname%></span></label>
+		        	<%@users.each do |user|%> 
+		            	<ul class="nav nav-list nav-left-ml"> 	
+		                	<li><a><%=user.surname%> <%=user.name%> <%=user.patronymic%> - <%=user.position%></a></li>
+		                </ul>
+		            <%end%>
+	            </li>	
+	    	</ul>
+    	<%end%>
+  </div>
+</div>

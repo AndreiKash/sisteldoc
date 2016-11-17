@@ -10,21 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161111115620) do
+ActiveRecord::Schema.define(version: 20161117115443) do
 
   create_table "users", force: :cascade do |t|
-    t.string   "surname"
     t.string   "name"
-    t.string   "patronymic"
     t.string   "login"
-    t.boolean  "leader"
-    t.integer  "rank"
-    t.integer  "subdivision"
-    t.boolean  "write"
-    t.boolean  "read"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
+    t.index ["login"], name: "index_users_on_login", unique: true
   end
 
 end
