@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     	@user = User.new(user_params)
     	if @user.save
     		flash[:success] = "Добро пожаловать в Систему электронного документооборота!"
-      		redirect_to @user
+      	redirect_to @user
     	else
       		render 'new'
     	end

@@ -1,17 +1,18 @@
 <% provide(:title, "Вход в систему") %>
-<h1>Вход в систему</h1>
+<h1>Войти в систему</h1>
 
 <div class="row">
-  <div class="col-md-2 col-md-offset-5">
+  <div class="col-md-2 col-md-offset-5"
     <%= form_for(:session, url: sessions_path) do |f| %>
-
-      <%= f.label :Логин %>
+    <%= render 'shared/error_messages' %>
+      
+      <%= f.label :login, "Логин" %>
       <%= f.text_field :login %>
 
-      <%= f.label :Пароль %>
+      <%= f.label :password, "Пароль" %>
       <%= f.password_field :password %>
 
       <%= f.submit "Войти", class: "btn btn-success btn-lg" %>
-    <% end %>
+    <% end %>p>
   </div>
 </div>
