@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/new'
-
   resources :subdivisions
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
