@@ -1,3 +1,4 @@
+<% if User.find_by(id: 1) == current_user %>
 <% provide(:title, 'Создать сотрудника') %>
 <h1>Создание нового сотрудника</h1>
 
@@ -22,3 +23,4 @@
     <% end %>
   </div>
 </div>
+<%end%>
