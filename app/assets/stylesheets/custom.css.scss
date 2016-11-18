@@ -33,7 +33,11 @@ textarea {
 }
 
 .nav.navbar-nav.navbar-right li a {
-    color: #ffffff;
+    color: #fff;
+    font-size:1.3em;
+}
+.nav.navbar-nav.navbar-right ul.dropdown-menu a {
+    color: #000;
     font-size:1.3em;
 }
 
@@ -123,7 +127,7 @@ input, textarea, select, .uneditable-input {
 }
 
 input {
-  width:160px;
+  width:360px;
   height: auto !important;
 }
 
@@ -162,6 +166,8 @@ span.nav-toggle-icon{
 }
 
 .field_with_errors {
-  @extend .control-group;
-  @extend .error;
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }

@@ -1,14 +1,20 @@
+<% if signed_in? %>
 <% provide(:title, 'Внутренний справочник') %>
 
 <div class="container">
 	<div class="col-md-12"><h1>Внутренний справочник</h1></div>
+	<% if User.find_by(id: 1) == current_user %>
+	<%= link_to "Создать подразделение", signup_subdivision_path, class: "btn btn-success" %>
+	<%= link_to "Создать сотрудника", signup_path, class: "btn btn-success" %>
+	<%end%>
+
   	<div class="col-md-12">
   		<%@subdivisions.each do |subdivision|%>
 	    	<ul class="nav nav-list-main">
 	        	<li><label class="nav-toggle nav-header"><span><%=subdivision.fullname%></span></label>
 		        	<%@users.each do |user|%> 
 		            	<ul class="nav nav-list nav-left-ml"> 	
-		                	<li><a><%=user.surname%> <%=user.name%> <%=user.patronymic%> - <%=user.position%></a></li>
+		                	<li><a><%=user.name%></a></li>
 		                </ul>
 		            <%end%>
 	            </li>	
@@ -16,3 +22,4 @@
     	<%end%>
   </div>
 </div>
+<%end%>

@@ -1,4 +1,5 @@
 class StaticPageController < ApplicationController
+
   def welcome_home
   end
 
@@ -6,4 +7,8 @@ class StaticPageController < ApplicationController
     @users = User.all
     @subdivisions = Subdivision.all
   end
+
+  def enter_documents
+  end
+
 end
