@@ -1,11 +1,11 @@
 class User < ApplicationRecord
 	before_create :create_remember_token
 
-  belongs_to :subdivision
+  belongs_to :subdivision, optional: true
 	
   validates :name,  presence: true, length: { maximum: 50 }
 	validates :login, presence: true, length: { maximum: 20 }, uniqueness: { case_sensitive: false}
-
+  validates :subdivision_id, presence: true
 
 	has_secure_password
 	validates :password, length: { minimum: 6 }

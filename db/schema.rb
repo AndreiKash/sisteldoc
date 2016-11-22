@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117143035) do
+ActiveRecord::Schema.define(version: 20161121144941) do
 
   create_table "subdivisions", force: :cascade do |t|
     t.string   "fullname"
     t.string   "name"
-    t.string   "leader"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,8 +26,10 @@ ActiveRecord::Schema.define(version: 20161117143035) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.string   "remember_token"
+    t.integer  "subdivision_id"
     t.index ["login"], name: "index_users_on_login", unique: true
     t.index ["remember_token"], name: "index_users_on_remember_token"
+    t.index ["subdivision_id", "created_at"], name: "index_users_on_subdivision_id_and_created_at"
   end
 
 end

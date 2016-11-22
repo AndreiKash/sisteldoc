@@ -171,3 +171,15 @@ span.nav-toggle-icon{
     color: $state-danger-text;
   }
 }
+
+
+/*select*/
+.styled-select select {
+    background-color: #fff;
+    background-position: 95% 50%;
+    border-radius: 5px;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    width: 360px;
+    height: 30px;
+   }

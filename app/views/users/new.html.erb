@@ -13,6 +13,11 @@
       <%= f.label :login, "Логин" %>
       <%= f.text_field :login %>
 
+      <%= f.label :subdivision_id, "Подразделение" %>
+      <div class="styled-select">
+      <%= f.select(:subdivision_id, @sub_options, :include_blank => "- Выберите подразделение -") %>
+      </div>
+
       <%= f.label :password, "Пароль" %>
       <%= f.password_field :password %>
 

@@ -8,12 +8,14 @@ class UsersController < ApplicationController
 
 	def new
     	@user = User.new
+      @sub_options = Subdivision.all.map{|u| [ u.fullname, u.id] }
   	end
 
   	def create
+      @sub_options = Subdivision.all.map{|u| [ u.id] }
     	@user = User.new(user_params)
     	if @user.save
-    		flash[:success] = "Добро пожаловать в Систему электронного документооборота!"
+    		flash.now[:success] = "Добро пожаловать в Систему электронного документооборота!"
       	redirect_to @user
     	else
       		render 'new'
@@ -22,6 +24,7 @@ class UsersController < ApplicationController
 
     def edit
       @user = User.find(params[:id])
+      @sub_options = Subdivision.all.map{|u| [ u.fullname, u.id] }
     end
 
     def update
@@ -37,7 +40,7 @@ class UsersController < ApplicationController
   	private
 
     def user_params
-      params.require(:user).permit(:name, :login, :password, :password_confirmation)
+      params.require(:user).permit(:name, :login, :password, :password_confirmation, :subdivision_id)
     end
 
     def signed_in_user
